@@ -8,7 +8,7 @@ A mobile or web application can send an API request to this lambda function with
 
 The geohash algorithm converts a set of latitude and longitude coordinates to a binary array. The array defines what bounded square the gps coordinates are located in on the globe. How big the squares are depends on how long the binary is. 
 
-The binary array is built by looking at the longitude value and asking is it greater than or less than 0. If it is greater than, the value will be 1 and if less than it will be 0. Then next index of the binary array does the same with the latitude. The next index checks if the longitude is above or below the midpoint of 0 and 180 or 0 and -180 depending on what range the longitude is in. This process repeats for the length of the array, alternating between longitude and latitude. This results in a narrowing square the gps coordinates are located in. 
+The binary array is built by looking at the longitude value and asking is it greater than or less than 0. If it is greater than, the first index value will be 1 and if less than it will be 0. The next index of the binary array does the same with the latitude. Then the next index checks if the longitude is above or below the midpoint of 0 and 180 or 0 and -180 depending on what range the longitude is in. This process repeats for the length of the array, alternating between longitude and latitude. This results in a narrowing square the gps coordinates are located in. 
 
 # Consecutive Requests
 
